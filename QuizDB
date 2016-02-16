@@ -1,0 +1,48 @@
+/*************LÄS INNAN NI IMPLEMENTERAR*********************
+1. Tanka ner filen och spara den på skrivbordet.
+2. Öppna MySQL command line (cmd skiten).
+3. Skriv: SOURCE C:/Users/"Erat datornamn"/Desktop/QuizDB.sql*/
+
+DROP DATABASE IF EXISTS QuizDB;
+CREATE DATABASE QuizDB;
+USE QuizDB;
+
+CREATE TABLE UserAccount
+(
+	UserID SMALLINT NOT NULL AUTO_INCREMENT,
+	User_name VARCHAR(20) NOT NULL DEFAULT "",
+    User_password VARCHAR(20) NOT NULL DEFAULT "",
+    User_status VARCHAR(20) NOT NULL DEFAULT "Student",
+    PRIMARY KEY(UserID)
+) engine=InnoDB;
+
+CREATE TABLE UserInfo
+(
+	UserID SMALLINT NOT NULL AUTO_INCREMENT,
+	User_firstName VARCHAR(25) NOT NULL DEFAULT "",
+    User_lastName VARCHAR(25) NOT NULL DEFAULT "",
+    User_email VARCHAR(50) NOT NULL DEFAULT "",
+    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID)
+) engine=InnoDB;
+
+CREATE TABLE Question
+(
+	QuestionID SMALLINT NOT NULL AUTO_INCREMENT,
+    Question VARCHAR(150) NOT NULL DEFAULT "",
+    PRIMARY KEY(QuestionID)
+) engine=InnoDB;
+
+CREATE TABLE Answers
+(
+	UserID SMALLINT NOT NULL,
+    QuestionID SMALLINT NOT NULL,
+    AnswerID SMALLINT NOT NULL,
+    Answer VARCHAR(100) NOT NULL DEFAULT "",
+    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID),
+    FOREIGN KEY (QuestionID) REFERENCES Question(QuestionID)
+) engine=InnoDB;
+
+INSERT INTO UserAccount(User_name, User_password, User_status) VALUES ("1", "1", "Admin");
+
+INSERT INTO UserAccount(User_name, User_password) VALUES ("User 1", "123");
+INSERT INTO UserInfo(User_firstName, User_lastName, User_email) VALUES ("Hej", "Då", "lol@gmail.com");
