@@ -23,13 +23,14 @@ Fungerande test spel runda (frågor som kommer i rad)  - !
 ________
 GUI
 Login                     - KLAR Rrahman
-Register                  - Pågående Rrahman
+Register                  - KLAR Rrahman
 Lärare(Panel)             - Pågående Rrahman
-Admin(Panel)              - Pågående Rrahman
+Admin(Panel)              - KLAR Rrahman
 utbildningsledare (Panel) - Pågående Rrahman
-Elev (Panel)              - Pågående Rrahman
-Lägga till fråga          - Pågående Rrahman
-Radera fråga              - Pågående Rrahman
+Elev (Panel)              - KLAR Rrahman
+Lägga till fråga          - !
+Radera fråga              - !
+Modifiera fråga           - !
 
 Quiz 1 (Menu)             - Pågående Rrahman
 Quiz 1 (Test)             - Pågående Rrahman
