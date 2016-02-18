@@ -7,22 +7,35 @@ DROP DATABASE IF EXISTS QuizDB;
 CREATE DATABASE QuizDB;
 USE QuizDB;
 
+CREATE TABLE Teacher
+(
+	TeacherID SMALLINT NOT NULL AUTO_INCREMENT,
+    Teacher_firstName VARCHAR(25) DEFAULT "",
+    Teacher_lastName VARCHAR(25) DEFAULT "",
+    PRIMARY KEY(TeacherID)
+) engine=InnoDB;
+
+CREATE TABLE Student
+(
+	StudentID SMALLINT NOT NULL AUTO_INCREMENT,
+    TeacherID SMALLINT NOT NULL,
+    Student_firstName VARCHAR(25) NOT NULL,
+    Student_lastName VARCHAR(25) NOT NULL,
+    Student_class VARCHAR(10) NOT NULL,
+    PRIMARY KEY(StudentID),
+    FOREIGN KEY(TeacherID) REFERENCES Teacher(TeacherID)
+) engine=InnoDB;
+
 CREATE TABLE UserAccount
 (
 	UserID SMALLINT NOT NULL AUTO_INCREMENT,
 	User_name VARCHAR(20) NOT NULL DEFAULT "",
     User_password VARCHAR(20) NOT NULL DEFAULT "",
     User_status VARCHAR(20) NOT NULL DEFAULT "Student",
-    PRIMARY KEY(UserID)
-) engine=InnoDB;
-
-CREATE TABLE UserInfo
-(
-	UserID SMALLINT NOT NULL AUTO_INCREMENT,
-	User_firstName VARCHAR(25) NOT NULL DEFAULT "",
+    User_firstName VARCHAR(25) NOT NULL DEFAULT "",
     User_lastName VARCHAR(25) NOT NULL DEFAULT "",
     User_email VARCHAR(50) NOT NULL DEFAULT "",
-    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID)
+    PRIMARY KEY(UserID)
 ) engine=InnoDB;
 
 CREATE TABLE Question
@@ -34,10 +47,11 @@ CREATE TABLE Question
 
 CREATE TABLE Answers
 (
-	UserID SMALLINT NOT NULL,
-    QuestionID SMALLINT NOT NULL,
+	UserID SMALLINT,
+    QuestionID SMALLINT DEFAULT NULL,
     AnswerID SMALLINT NOT NULL,
-    Answer VARCHAR(100) NOT NULL DEFAULT "",
+    Answer VARCHAR(100) DEFAULT NULL,
+    CorrectAnswer VARCHAR(25) DEFAULT NULL,
     FOREIGN KEY (UserID) REFERENCES UserAccount(UserID),
     FOREIGN KEY (QuestionID) REFERENCES Question(QuestionID)
 ) engine=InnoDB;
@@ -46,3 +60,9 @@ INSERT INTO UserAccount(User_name, User_password, User_status) VALUES ("1", "1",
 
 INSERT INTO UserAccount(User_name, User_password) VALUES ("User 1", "123");
 INSERT INTO UserInfo(User_firstName, User_lastName, User_email) VALUES ("Hej", "Då", "lol@gmail.com");
+
+/*INSERT INTO Question(Question) VALUES("Vad dricker en ko?");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, Answer) VALUES(1, 1, 1, "Mjölk");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, Answer) VALUES(1, 1, 1, "Vatten");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, Answer) VALUES(1, 1, 1, "Cola");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, CorrectAnswer) VALUES(1, 1, 1, "Vatten");*/
