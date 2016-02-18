@@ -10,7 +10,7 @@ Logga in som elev,lärare,utbildningsledare,Admin - Pågående Rrahman.
 
 -------------FUNKTIONER-------------
 Lägga till fråga  -  KLAR Kevin
-Ta bort fråga     -  Pågående Kevin
+Ta bort fråga     -  KLAR Kevin
 Ändra fråga       -  Pågående Mergim
 Admin Panel       -  Tar lite här ifrån(Kevin), finns mycket att göra, fråga mig vad som är kvar att göra eller kolla koden.
 Lärar Panel       -  !
@@ -32,7 +32,7 @@ Admin(Panel)              - KLAR Rrahman
 utbildningsledare (Panel) - Pågående Rrahman
 Elev (Panel)              - KLAR Rrahman
 Lägga till fråga          - KLAR Kevin
-Radera fråga              - Pågående Kevin
+Radera fråga              - KLAR Kevin
 Modifiera fråga           - Pågående Mergim
 
 Quiz 1 (Menu)             - KLAR Rrahman
