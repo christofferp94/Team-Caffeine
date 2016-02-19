@@ -1,0 +1,76 @@
+ ___________________________________________________________________________
+|Att Göra Lista :  ! skriv  Pågående/KLAR, Updatera på Github och dropbox   |
+|Möte den 29/02-2016                                                        |
+|___________________________________________________________________________|
+
+Att göra lista:
+_____________________________________________________________________________________________________________________________________________________________________
+Skapa konto.  - KLAR Rrahman.
+Logga in som elev,lärare,utbildningsledare,Admin - KLAR Rrahman.
+
+-------------FUNKTIONER-------------
+Lägga till fråga  -  KLAR Kevin
+Ta bort fråga     -  KLAR Kevin
+Ändra fråga       -  Pågående Mergim
+Admin Panel       -  Tar lite här ifrån(Kevin), finns mycket att göra, fråga mig vad som är kvar att göra eller kolla koden.
+Lärar Panel       -  !
+Elev Panel        -  !
+Ändra lösenord    - Pågående Rrahman
+Ändra email       - Pågående Rrahman
+Göra ett quiz     -  !
+Ändra Svar        -  !
+
+Visa elever (då man är inloggad som lärare)           - !
+Visa klass & lärare (då man är inloggad som elev)     - !
+Fungerande test spel runda (frågor som kommer i rad)  - !
+________
+GUI
+Login                     - KLAR Rrahman
+Register                  - KLAR Rrahman
+Lärare(Panel)             - KLAR Rrahman
+Admin(Panel)              - KLAR Rrahman
+utbildningsledare (Panel) - KLAR Rrahman
+Elev (Panel)              - KLAR Rrahman
+Lägga till fråga          - KLAR Kevin
+Radera fråga              - KLAR Kevin
+Modifiera fråga           - Pågående Mergim
+
+Quiz 1 (Menu)             - KLAR Rrahman
+Quiz 1 (Test)             - KLAR Rrahman
+Quiz 1 (Prov)             - KLAR Rrahman
+Quiz 1 (TestResultat)     - KLAR Rrahman
+Quiz 1 (Prov Resultat)    - KLAR Rrahman
+Byta Lösenord             - KLAR Rrahman
+Byta Email                - KLAR Rrahman
+
+Krav Lista:
+_____________________________________________________________________________________________________________________________________________________________________
+?	Som utbildningsledare/administratör vill jag kunna författa frågor i ett vanligt dokument och sedan klippa ut och klistra in frågorna i testverktyget 
+= Läraren skall kunna själv copy/paste och registrera ny fråga.
+?	Som administratör vill jag kunna mejla ut en länk till deltagare som kan göra testet från sin dator på eller utanför skolan.
+= Länk till elev från admin 
+?	Som administratör vill jag kunna sätta upp tidsgränser för när testet öppnar och stänger.
+= Admin ska sätta tid för hur länge man ska kunna göra något.
+?	Som administratör vill jag att testet ska spärras för vidare användning när testet är inlämnat.
+= Efter man har gjort "TEST" så ska programmet spärra
+?	Som användare vill jag kunna se hur mycket tid jag har kvar tills testet stänger .
+= Timer på provet som tickar ner.
+?	Som användare vill jag alltid kunna se hur många frågor som är kvar
+= exempel Fråga 1/10 
+?	Som administratör/lärare/utbildningsledare vill jag kunna få statistik över testresultatet (antal godkända, medelvärde, hur lång tid testet tog etc.) för samtliga testgrupper
+= Statistik, betyg , medelvärde , tid.
+?	Som lärare vill jag kunna ställa olika typer av frågor i testverktyget (ex. flervalsfrågor, alternativfrågor, öppna frågor, rangordningsfrågor) 
+= checklist,radiobutton,textarea,rankorder.
+?	Som lärare vill jag kunna använda diagram, tabeller och bilder när jag utformar frågorna i testet.
+= Man kan använda diagram, tabeller och bilder då man ställer frågor.
+?	Som lärare vill jag kunna bedöma och betygssätta de olika typerna avfrågorna i testverktyget (ex. flervalsfrågor, alternativfrågor, öppna frågor, rangordningsfrågor) 
+= Olika mycket poäng per fråga 
+?	Som lärare vill jag kunna skapa självrättande prov (ex. med flervalsfrågor) 
+= prov som auto rättar då man har radio buttons
+?	Som lärare/utbildningsledare/utbildningsadministratör vill jag kunna välja om användaren ska kunna se resultatet av ett självrättande prov direkt 
+= alternativ för läraren att välja ifall man ska få resultat direkt (boolean?)
+?	Som användare vill jag kunna se resultatet av ett självrättande prov direkt, om detta alternativ är valt av lärare/utbildningsledare/utbildningsadministratör 
+= ifall läraren tillåter det - visa betygen. 
+?	Som utbildningsledare/utbildningsadministratör vill jag kunna spara studenternas skriva prov (frågor och svar samt lärarens bedömning) i pdf-filer. 
+= Spara provet i pdf fil. 
+_____________________________________________________________________________________________________________________________________________________________________
