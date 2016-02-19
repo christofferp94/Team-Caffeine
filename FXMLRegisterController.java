@@ -5,8 +5,12 @@
  */
 package projektarbetequiz;
 
+import com.mysql.jdbc.Connection;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,7 +60,11 @@ public class FXMLRegisterController implements Initializable {
 
     @FXML
     private TextField classFld;
-    
+
+    String dbURL = "jdbc:mysql://localhost:3306/quizdb";
+    String user = "root";
+    String pass = "SKrivKOD";
+
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
 
@@ -93,28 +101,54 @@ public class FXMLRegisterController implements Initializable {
             } else if (classFld.getText().equals("")) {
                 message.setText("");
                 error.setText("Please fill in class");
-            
+
             } else if (!passwordFld.getText().equals(confirmPasswordFld.getText())) {
                 message.setText("");
                 error.setText("Password does not match");
 
                 // create account
             } else {
-                JOptionPane.showMessageDialog(null, "Account Created");
+
+                try (Connection conn = (Connection) DriverManager.getConnection(dbURL, user, pass)) {
+
+                    String query = "INSERT INTO UserAccount(User_name, User_password, User_firstName , User_lastName , User_email) VALUES (?, ?, ?, ? , ? )";
+                    PreparedStatement statement = (PreparedStatement) conn.prepareStatement(query);
+                    statement.setString(1, usernameFld.getText());
+                    statement.setString(2, passwordFld.getText());
+                    statement.setString(3, nameFld.getText());
+                    statement.setString(4, lastnameFld.getText());
+                    statement.setString(5, emailFld.getText());
+                    
+
+                    statement.executeUpdate();
+
+                    System.out.println("Connect with DataBase - Suceeded ");
+
+                } catch (SQLException ex) {
+
+                    message.setText("");
+                    error.setText("Faild to connect with Database");
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+
+                }
+
+                // User message
+                error.setText("");
+                message.setText("Account created");
+
+                // Clear fields
+                usernameFld.clear();
+                passwordFld.clear();
+                confirmPasswordFld.clear();
+                nameFld.clear();
+                lastnameFld.clear();
+                emailFld.clear();
+                classFld.clear();
+
             }
 
-            // Go back to Login, when user clicks Back button
         } else if (event.getSource() == backBtn) {
-
-            // Clean fields and labels
-            message.setText("");
-            error.setText("");
-            usernameFld.clear();
-            passwordFld.clear();
-            confirmPasswordFld.clear();
-            nameFld.clear();
-            lastnameFld.clear();
-            emailFld.clear();
+            // Go back to Login, when user clicks Back button
 
             Parent p = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
@@ -129,7 +163,16 @@ public class FXMLRegisterController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        message.setText("");
+        error.setText("");
+        usernameFld.clear();
+        passwordFld.clear();
+        confirmPasswordFld.clear();
+        nameFld.clear();
+        lastnameFld.clear();
+        emailFld.clear();
+        classFld.clear();
+        
     }
 
 }
