@@ -24,6 +24,8 @@ public class StudentStartMenuController implements Initializable {
 
     @FXML
     private Button statsBtn;
+    @FXML
+    private Button studentList;
 
     @FXML
     private Button logoutBtn;
@@ -43,8 +45,7 @@ public class StudentStartMenuController implements Initializable {
     @FXML
     private Button unknow1Btn;
 
-    @FXML
-    private Button unknow2Btn;
+   
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
@@ -95,10 +96,20 @@ public class StudentStartMenuController implements Initializable {
 
             JOptionPane.showMessageDialog(null, "Coming Soon1");
 
-        } else if (event.getSource() == unknow2Btn) {
-            // When user click on Go to unknown2btn
+       } else if (event.getSource() == studentList) {
+           // When user click on Go to unknown2btn
+            // To make connection to download the list
+       
+            
+            Parent p = FXMLLoader.load(getClass().getResource("SList.fxml"));
 
-            JOptionPane.showMessageDialog(null, "Coming soon2");
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stg.setScene(s);
+            stg.show();
+
+            JOptionPane.showMessageDialog(null, "Coming soon the list");
 
         } else if (event.getSource() == logoutBtn) {
             // When user clicks on LogoutButton
@@ -113,7 +124,7 @@ public class StudentStartMenuController implements Initializable {
 
         }
     }
-
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
