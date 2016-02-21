@@ -48,6 +48,10 @@ public class LoginController implements Initializable {
     static String logginUsername;
     static String tmpPassword;
     static String tmpAccountstatus;
+    static String tmpEmail;
+    static String tmpName;
+    static String tmpLastname;
+    
     int loginCounter = 5;
 
     String dbURL = "jdbc:mysql://localhost:3306/quizdb";
@@ -77,7 +81,7 @@ public class LoginController implements Initializable {
                 // Login Database 
                 try (Connection conn = (Connection) DriverManager.getConnection(dbURL, user, pass)) {
 
-                    String query = "SELECT User_name, User_password,User_status FROM useraccount WHERE user_name =?";
+                    String query = "SELECT User_name, User_password,User_status, User_email, User_firstName, User_LastName FROM useraccount WHERE user_name =?";
                     PreparedStatement statement = (PreparedStatement) conn.prepareStatement(query);
                     statement.setString(1, usernameFld.getText());
                     ResultSet result = statement.executeQuery();
@@ -87,6 +91,10 @@ public class LoginController implements Initializable {
                         logginUsername = result.getString("User_name");
                         tmpPassword = result.getString("User_password");
                         tmpAccountstatus = result.getString("User_status");
+                        tmpEmail = result.getString("User_email");
+                        tmpName = result.getString("User_firstName");
+                        tmpLastname = result.getString("User_LastName");
+                        
                         System.out.println("Connect with DataBase - Suceeded ");
 
                     }
