@@ -51,7 +51,7 @@ public class FXMLChangePasswordController implements Initializable {
 
     String dbURL = "jdbc:mysql://localhost:3306/quizdb";
     String user = "root";
-    String pass = "XXXXX";
+    String pass = "XXXX";
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
@@ -69,10 +69,10 @@ public class FXMLChangePasswordController implements Initializable {
                 message.setText("");
                 error.setText("Please confirm password");
 
-            }  else if (!currentpasswordFld.getText().equals(LoginController.tmpPassword)){
-            message.setText("");
-            error.setText("Current password does not match");
-            
+            } else if (!currentpasswordFld.getText().equals(LoginController.tmpPassword)) {
+                message.setText("");
+                error.setText("Current password does not match");
+
             } else if (!newPasswordFld.getText().equals(confirmPasswordFld.getText())) {
                 message.setText("");
                 error.setText("Password does not match");
@@ -112,13 +112,47 @@ public class FXMLChangePasswordController implements Initializable {
         } else if (event.getSource() == backBtn) {
             // When user clicks Back button 
 
-            Parent p = FXMLLoader.load(getClass().getResource("FXMLStudentStartMenu.fxml"));
+            if (LoginController.tmpAccountstatus.equals("Student")) {
 
-            Scene s = new Scene(p);
-            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Parent p = FXMLLoader.load(getClass().getResource("FXMLStudentStartMenu.fxml"));
 
-            stg.setScene(s);
-            stg.show();
+                Scene s = new Scene(p);
+                Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                stg.setScene(s);
+                stg.show();
+
+            } else if (LoginController.tmpAccountstatus.equals("Teacher")) {
+
+                Parent p = FXMLLoader.load(getClass().getResource("FXMLTeacherPanel.fxml"));
+
+                Scene s = new Scene(p);
+                Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                stg.setScene(s);
+                stg.show();
+
+            } else if (LoginController.tmpAccountstatus.equals("Principal")) {
+
+                Parent p = FXMLLoader.load(getClass().getResource("FXMLPrincipalPanel.fxml"));
+
+                Scene s = new Scene(p);
+                Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                stg.setScene(s);
+                stg.show();
+
+            } else if (LoginController.tmpAccountstatus.equals("Admin")) {
+
+                Parent p = FXMLLoader.load(getClass().getResource("FXMLAdminPanel.fxml"));
+
+                Scene s = new Scene(p);
+                Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                stg.setScene(s);
+                stg.show();
+
+            }
 
         }
     }
