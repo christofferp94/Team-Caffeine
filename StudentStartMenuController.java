@@ -127,7 +127,9 @@ public class StudentStartMenuController implements Initializable {
      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        welcomeLabel.setText(LoginController.tmpName + " " + LoginController.tmpLastname);
+        
     }
 
 }
