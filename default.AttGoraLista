@@ -5,8 +5,8 @@
 
 Att göra lista:
 _____________________________________________________________________________________________________________________________________________________________________
-Skapa konto.  - Pågående Rrahman.
-Logga in som elev,lärare,utbildningsledare,Admin - Pågående Rrahman.
+Skapa konto.  - KLAR Rrahman.
+Logga in som elev,lärare,utbildningsledare,Admin - KLAR Rrahman.
 
 -------------FUNKTIONER-------------
 Lägga till fråga  -  KLAR Kevin
@@ -14,11 +14,12 @@ Ta bort fråga     -  KLAR Kevin
 Ändra fråga       -  Pågående Mergim
 Admin Panel       -  Tar lite här ifrån(Kevin), finns mycket att göra, fråga mig vad som är kvar att göra eller kolla koden.
 Lärar Panel       -  !
-Elev Panel        - Pågående Marius
-Ändra lösenord    - Pågående Rrahman
-Ändra email       - Pågående Rrahman
+Elev Panel        -  !
+Ändra lösenord    - KLAR Rrahman
+Ändra email       - KLAR Rrahman
 Göra ett quiz     -  !
 Ändra Svar        -  !
+Anti bot shut down - ! KLAR Rrahman 
 
 Visa elever (då man är inloggad som lärare)           - !
 Visa klass & lärare (då man är inloggad som elev)     - !
@@ -37,9 +38,9 @@ Modifiera fråga           - Pågående Mergim
 
 Quiz 1 (Menu)             - KLAR Rrahman
 Quiz 1 (Test)             - KLAR Rrahman
-Quiz 1 (Prov)             - Pågående Rrahman
+Quiz 1 (Prov)             - KLAR Rrahman
 Quiz 1 (TestResultat)     - KLAR Rrahman
-Quiz 1 (Prov Resultat)    - Pågående Rrahman
+Quiz 1 (Prov Resultat)    - KLAR Rrahman
 Byta Lösenord             - KLAR Rrahman
 Byta Email                - KLAR Rrahman
 

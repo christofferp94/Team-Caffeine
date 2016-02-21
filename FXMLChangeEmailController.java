@@ -52,7 +52,7 @@ public class FXMLChangeEmailController implements Initializable {
 
     String dbURL = "jdbc:mysql://localhost:3306/quizdb";
     String user = "root";
-    String pass = "XXXX";
+    String pass = "root";
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {

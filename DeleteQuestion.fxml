@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="382.0" prefWidth="306.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projektarbetequiz.DeleteQuestionController">
+   <children>
+      <TableView fx:id="questionTable" editable="true" layoutY="80.0" prefHeight="288.0" prefWidth="306.0">
+        <columns>
+          <TableColumn fx:id="questionIDCol" prefWidth="75.0" text="Question ID" />
+          <TableColumn fx:id="questionCol" prefWidth="230.0" text="Question" />
+        </columns>
+      </TableView>
+      <Button fx:id="deleteBtn" layoutY="368.0" mnemonicParsing="false" onAction="#deleteQuestion" prefHeight="40.0" prefWidth="306.0" style="-fx-background-color: #3399FF;" text="Delete question" />
+      <Text fill="#3399ff" layoutX="81.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Question">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="back" layoutY="12.0" mnemonicParsing="false" onAction="#BackButtonAction" text="Back" />
+   </children>
+</AnchorPane>

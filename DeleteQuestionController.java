@@ -1,5 +1,6 @@
 package projektarbetequiz;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,11 +16,19 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.sql.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class DeleteQuestionController implements Initializable
 {
 	@FXML
 	private Button deleteBtn;
+        
+	@FXML
+	private Button back;
 	@FXML
 	private TableView<Question> questionTable;
 	@FXML
@@ -32,7 +41,7 @@ public class DeleteQuestionController implements Initializable
 	
 	String url = "jdbc:mysql://localhost:3306/QuizDB";
 	String user = "root";
-	String pwd = "lithz1994";
+	String pwd = "root";
 	
 	@FXML
 	private void loadQuestions()
@@ -79,8 +88,9 @@ public class DeleteQuestionController implements Initializable
 				statement.setString(1, questionToBeDeleted);
 				statement.executeUpdate();
 			}
-			else
+			else 
 			{
+                            
 				JOptionPane.showMessageDialog(null, "Error removing question!");
 			}
 		}
@@ -88,7 +98,24 @@ public class DeleteQuestionController implements Initializable
 		{
 			JOptionPane.showMessageDialog(null, "Error connecting to database: " + ex.getMessage());
 		}
+             
+    }
+        
+    @FXML
+        private void BackButtonAction(ActionEvent event) throws IOException {
+
+        if (event.getSource() == back) {
+            
+            Parent p = FXMLLoader.load(getClass().getResource("FXMLAdminPanel.fxml"));
+
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stg.setScene(s);
+            stg.show();
+                
 	}
+}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1)

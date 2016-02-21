@@ -5,8 +5,14 @@
  */
 package projektarbetequiz;
 
+import com.mysql.jdbc.Connection;
+import static com.sun.media.jfxmediaimpl.MediaUtils.error;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +25,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import static sun.management.Agent.error;
+import static sun.management.Agent.error;
+import static sun.management.Agent.error;
+import static sun.management.Agent.error;
+import static sun.management.Agent.error;
+import static sun.management.Agent.error;
+import static sun.management.Agent.error;
 
 public class StudentStartMenuController implements Initializable {
 
@@ -48,7 +61,7 @@ public class StudentStartMenuController implements Initializable {
    
 
     @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException {
+    private void handleButtonAction(ActionEvent event) throws IOException, SQLException {
 
         if (event.getSource() == statsBtn) {
             // When user clicks on QuizButton
@@ -97,10 +110,7 @@ public class StudentStartMenuController implements Initializable {
             JOptionPane.showMessageDialog(null, "Coming Soon1");
 
        } else if (event.getSource() == studentList) {
-           // When user click on Go to unknown2btn
-            // To make connection to download the list
-       
-            
+           // When user click on Go to unknown2btn 
             Parent p = FXMLLoader.load(getClass().getResource("SList.fxml"));
 
             Scene s = new Scene(p);
@@ -108,8 +118,24 @@ public class StudentStartMenuController implements Initializable {
 
             stg.setScene(s);
             stg.show();
+             // To make connection to download the list
+                String dbURL = "jdbc:mysql://localhost:3306/quizdb";
+                String user = "root";
+                String pass = "root";
+                {
+                  try (Connection conn = (Connection) DriverManager.getConnection(dbURL, user, pass)) 
+                  {
 
-            JOptionPane.showMessageDialog(null, "Coming soon the list");
+                  
+                }
+                  catch (SQLException e) {
+                    
+                    e.printStackTrace();
+                }
+
+                }   
+
+           // JOptionPane.showMessageDialog(null, "Coming soon the list");
 
         } else if (event.getSource() == logoutBtn) {
             // When user clicks on LogoutButton

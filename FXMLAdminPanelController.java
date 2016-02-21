@@ -100,23 +100,77 @@ public class FXMLAdminPanelController implements Initializable {
             JOptionPane.showMessageDialog(null, "Save");
 
         } else if (event.getSource() == registerQuestionBtn) {
+              
+//            Parent p = FXMLLoader.load(getClass().getResource(".fxml"));
+//
+//            Scene s = new Scene(p);
+//            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//
+//            stg.setScene(s);
+//            stg.show();
+//    
 
             JOptionPane.showMessageDialog(null, "Register Question");
 
         } else if (event.getSource() == registerUserBtn) {
-            JOptionPane.showMessageDialog(null, "Register user");
+              
+            Parent p = FXMLLoader.load(getClass().getResource("FXMLRegister.fxml"));
+
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stg.setScene(s);
+            stg.show();
+    
+           // JOptionPane.showMessageDialog(null, "Register user");
 
         } else if (event.getSource() == regularUserBtn) {
-            JOptionPane.showMessageDialog(null, "Regular user");
+              
+            Parent p = FXMLLoader.load(getClass().getResource("FXMLStudentStartMenu.fxml"));
+
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stg.setScene(s);
+            stg.show();
+    
+           // JOptionPane.showMessageDialog(null, "Regular user");
 
         } else if (event.getSource() == deleteQuestionBtn ) {
-            JOptionPane.showMessageDialog(null, "Delete Question");
+              
+            Parent p = FXMLLoader.load(getClass().getResource("DeleteQuestion.fxml"));
+
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stg.setScene(s);
+            stg.show();
+    
+           // JOptionPane.showMessageDialog(null, "Delete Question");
             
         } else if (event.getSource() == teacherBtn) {
-            JOptionPane.showMessageDialog(null, "Teacher Panel Button");
+              
+            Parent p = FXMLLoader.load(getClass().getResource("FXMLTeacherPanel.fxml"));
+
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stg.setScene(s);
+            stg.show();
+    
+           // JOptionPane.showMessageDialog(null, "Teacher Panel Button");
             
         } else if (event.getSource() == principalBtn) {
-            JOptionPane.showMessageDialog(null, "Principal Panel Button");
+              
+            Parent p = FXMLLoader.load(getClass().getResource("FXMLPrincipalPanel.fxml"));
+
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stg.setScene(s);
+            stg.show();
+    
+           // JOptionPane.showMessageDialog(null, "Principal Panel Button");
             
         } else if (event.getSource() == editQuestionBtn) {
             JOptionPane.showMessageDialog(null, "Edit Question Button");

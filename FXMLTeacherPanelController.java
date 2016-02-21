@@ -23,6 +23,9 @@ public class FXMLTeacherPanelController implements Initializable {
 
     @FXML
     private Button studentPanelBtn;
+    
+    @FXML
+    private Button backAdminPanelBtn;
 
     @FXML
     private Button logoutBtn;
@@ -45,8 +48,8 @@ public class FXMLTeacherPanelController implements Initializable {
     @FXML
     private Button classListBtn;
 
-    @FXML
-    private Button unknowBtn;
+//    @FXML
+//    private Button unknowBtn;
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
@@ -98,18 +101,18 @@ public class FXMLTeacherPanelController implements Initializable {
         } else if (event.getSource() == addQuestionBtn) {
             // when teacher press add question 
 
-            Parent p = FXMLLoader.load(getClass().getResource("CreateNewQuestionFXML.fxml"));
-
-            Scene s = new Scene(p);
-            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            stg.setScene(s);
-            stg.show();
+//            Parent p = FXMLLoader.load(getClass().getResource("CreateNewQuestionFXML.fxml"));
+//
+//            Scene s = new Scene(p);
+//            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//
+//            stg.setScene(s);
+//            stg.show();
 
         } else if (event.getSource() == deleteQuestionBtn) {
             // when teacher press deleteQuestion 
          
-            Parent p = FXMLLoader.load(getClass().getResource("DeleteQuestionFXML.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("DeleteQuestion.fxml"));
             
             Scene s = new Scene(p);
             Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -146,9 +149,19 @@ public class FXMLTeacherPanelController implements Initializable {
             stg.show();
              */
             JOptionPane.showMessageDialog(null, "Class List ");
-
-        } else if (event.getSource() == unknowBtn) {
+        }
+    }
+ @FXML
+    private void BackButtonAction(ActionEvent event) throws IOException {
+       if (event.getSource() == backAdminPanelBtn) {
             // ADD ME !! 
+            Parent p = FXMLLoader.load(getClass().getResource("FXMLAdminPanel.fxml"));
+            
+            Scene s = new Scene(p);
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            
+            stg.setScene(s);
+            stg.show();
 
             JOptionPane.showMessageDialog(null, "Hehehhe");
 
