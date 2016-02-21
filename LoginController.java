@@ -48,6 +48,7 @@ public class LoginController implements Initializable {
     static String logginUsername;
     static String tmpPassword;
     static String tmpAccountstatus;
+    int loginCounter = 5;
 
     String dbURL = "jdbc:mysql://localhost:3306/quizdb";
     String user = "root";
@@ -65,6 +66,11 @@ public class LoginController implements Initializable {
 
             } else if (passwordFld.getText().equals("")) {
                 error.setText("Please fill in password");
+
+            } else if (loginCounter == 0) {
+
+                JOptionPane.showMessageDialog(null, "0 Try left- Auto Shutdown");
+                System.exit(1);
 
             } else {
 
@@ -92,11 +98,13 @@ public class LoginController implements Initializable {
 
                 if (!usernameFld.getText().equals(logginUsername)) {
                     // if username does not match the username user typed in
-                    error.setText("Wrong username/password");
+                    error.setText("Wrong username/password " + loginCounter + " Try left");
+                    loginCounter -= 1;
 
                 } else if (!passwordFld.getText().equals(tmpPassword)) {
 
-                    error.setText("Wrong username/password");
+                    error.setText("Wrong username/password " + loginCounter + " Try left");
+                    loginCounter -= 1;
 
                 } else if (tmpAccountstatus.equals("Student")) {
 
@@ -168,7 +176,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }
 
 }
