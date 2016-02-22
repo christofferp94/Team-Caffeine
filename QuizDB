@@ -50,8 +50,10 @@ CREATE TABLE Answers
 	UserID SMALLINT,
     QuestionID SMALLINT DEFAULT NULL,
     AnswerID SMALLINT NOT NULL,
-    Answer VARCHAR(100) DEFAULT NULL,
-    CorrectAnswer VARCHAR(25) DEFAULT NULL,
+    AnswerOne VARCHAR(100) DEFAULT "",
+    AnswerTwo VARCHAR(100) DEFAULT "",
+    AnswerThree VARCHAR(100) DEFAULT "",
+    CorrectAnswer VARCHAR(25) DEFAULT "",
     FOREIGN KEY (UserID) REFERENCES UserAccount(UserID),
     FOREIGN KEY (QuestionID) REFERENCES Question(QuestionID)
 ) engine=InnoDB;
@@ -59,10 +61,9 @@ CREATE TABLE Answers
 INSERT INTO UserAccount(User_name, User_password, User_status) VALUES ("1", "1", "Admin");
 
 INSERT INTO UserAccount(User_name, User_password) VALUES ("User 1", "123");
-INSERT INTO UserInfo(User_firstName, User_lastName, User_email) VALUES ("Hej", "Då", "lol@gmail.com");
 
-/*INSERT INTO Question(Question) VALUES("Vad dricker en ko?");
-INSERT INTO Answers(UserID, QuestionID, AnswerID, Answer) VALUES(1, 1, 1, "Mjölk");
-INSERT INTO Answers(UserID, QuestionID, AnswerID, Answer) VALUES(1, 1, 1, "Vatten");
-INSERT INTO Answers(UserID, QuestionID, AnswerID, Answer) VALUES(1, 1, 1, "Cola");
-INSERT INTO Answers(UserID, QuestionID, AnswerID, CorrectAnswer) VALUES(1, 1, 1, "Vatten");*/
+INSERT INTO Question(Question) VALUES("Vad dricker en ko?");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, AnswerOne) VALUES(1, 1, 1, "Mjölk");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, AnswerTwo) VALUES(1, 1, 1, "Vatten");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, AnswerThree) VALUES(1, 1, 1, "Cola");
+INSERT INTO Answers(UserID, QuestionID, AnswerID, CorrectAnswer) VALUES(1, 1, 1, "Vatten");
