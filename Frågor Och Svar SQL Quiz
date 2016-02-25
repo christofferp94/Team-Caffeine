@@ -1,0 +1,159 @@
+1. What doe SQL stand for ?
+*Structured Query Language
+*Strong Question Language
+*Structured Question Language
+Svar: Structured Query Language
+
+2. Which SQL statement is used to extract data from a database?
+*SELECT
+*GET
+*OPEN
+*EXTRACT
+Svar: SELECT
+
+3. Which SQL statement is used to update data in a database?
+*SAVE
+*UPDATE
+*MODIFY
+*SAVE AS
+Svar: UPDATE
+
+4. Which SQL statement is used to delete data from a database?
+*DELETE
+*COLLAPSE
+*REMOVE
+Svar: DELETE
+
+5. Which SQL statement is used to insert new data in a database?
+*ADD NEW
+*INSERT NEW
+*INSERT INTO
+*ADD RECORD
+Svar: INSERT INTO
+
+6. With SQL, how do you select a column named "FirstName" from a table named "Persons"?
+*EXTRACT FirstName FROM Persons
+*SELECT FirstName FROM Persons
+*SELECT Persons.FirstName
+Svar: SELECT FirstName FROM Persons
+
+7. With SQL, how do you select all the columns from a table named "Persons"?
+SELECT Persons
+SELECT * FROM Persons
+SELECT *.Persons
+SELECT [all] FROM Persons
+Svar:  SELECT * FROM Persons
+
+8. With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" is "Peter"?
+*SELECT [all] FROM Persons WHERE FirstName='Peter'
+*SELECT [all] FROM Persons WHERE FirstName LIKE 'Peter'
+*SELECT * FROM Persons WHERE FirstName='Peter'
+*SELECT * FROM Persons WHERE FirstName<>'Peter'
+Svar: SELECT * FROM Persons WHERE FirstName='Peter'
+
+9. With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" starts with an "a"?
+*SELECT * FROM Persons WHERE FirstName LIKE 'a%'
+*SELECT * FROM Persons WHERE FirstName LIKE '%a'
+*SELECT * FROM Persons WHERE FirstName='a'
+*SELECT * FROM Persons WHERE FirstName='%a%'
+Svar: SELECT * FROM Persons WHERE FirstName LIKE 'a%'
+
+10. The OR operator displays a record if ANY conditions listed are true. The AND operator displays a record if ALL of the conditions listed are true
+*False
+*True
+Svar: True
+
+11. With SQL, how do you select all the records from a table named "Persons" where the "FirstName" is "Peter" and the "LastName" is "Jackson"?
+*SELECT FirstName='Peter', LastName='Jackson' FROM Persons
+*SELECT * FROM Persons WHERE FirstName<>'Peter' AND LastName<>'Jackson'
+*SELECT * FROM Persons WHERE FirstName='Peter' AND LastName='Jackson'
+Svar: SELECT * FROM Persons WHERE FirstName='Peter' AND LastName='Jackson'
+
+12. With SQL, how do you select all the records from a table named "Persons" where the "LastName" is alphabetically between (and including) "Hansen" and "Pettersen"?
+*SELECT LastName>'Hansen' AND LastName<'Pettersen' FROM Persons
+*SELECT * FROM Persons WHERE LastName BETWEEN 'Hansen' AND 'Pettersen'
+*SELECT * FROM Persons WHERE LastName>'Hansen' AND LastName<'Pettersen'
+Svar: SELECT * FROM Persons WHERE LastName BETWEEN 'Hansen' AND 'Pettersen'
+
+13. Which SQL statement is used to return only different values?
+*SELECT DISTINCT
+*SELECT DIFFERENT
+*SELECT UNIQUE
+Svar: SELECT DISTINCT
+
+14. Which SQL keyword is used to sort the result-set?
+*ORDER
+*ORDER BY
+*SORT BY
+*SORT
+Svar: ORDER BY
+
+15. With SQL, how can you return all the records from a table named "Persons" sorted descending by "FirstName"?
+*SELECT * FROM Persons ORDER BY FirstName DESC
+*SELECT * FROM Persons SORT BY 'FirstName' DESC
+*SELECT * FROM Persons ORDER FirstName DESC
+*SELECT * FROM Persons SORT 'FirstName' DESC
+Svar: SELECT * FROM Persons ORDER BY FirstName DESC 
+
+16. With SQL, how can you insert a new record into the "Persons" table?
+*INSERT ('Jimmy', 'Jackson') INTO Persons
+*INSERT INTO Persons VALUES ('Jimmy', 'Jackson')
+*INSERT VALUES ('Jimmy', 'Jackson') INTO Persons
+Svar: INSERT INTO Persons VALUES ('Jimmy', 'Jackson')
+
+17. With SQL, how can you insert "Olsen" as the "LastName" in the "Persons" table?
+*INSERT INTO Persons ('Olsen') INTO LastName
+*INSERT INTO Persons (LastName) VALUES ('Olsen')
+*INSERT ('Olsen') INTO Persons (LastName)
+Svar: INSERT INTO Persons (LastName) VALUES ('Olsen')
+
+18. How can you change "Hansen" into "Nilsen" in the "LastName" column in the Persons table?
+*MODIFY Persons SET LastName='Hansen' INTO LastName='Nilsen
+*MODIFY Persons SET LastName='Nilsen' WHERE LastName='Hansen'
+*UPDATE Persons SET LastName='Hansen' INTO LastName='Nilsen'
+*UPDATE Persons SET LastName='Nilsen' WHERE LastName='Hansen'
+Svar: UPDATE Persons SET LastName='Nilsen' WHERE LastName='Hansen'
+
+19. With SQL, how can you delete the records where the "FirstName" is "Peter" in the Persons Table?
+*DELETE ROW FirstName='Peter' FROM Persons
+*DELETE FirstName='Peter' FROM Persons
+*DELETE FROM Persons WHERE FirstName = 'Peter'
+Svar: DELETE FROM Persons WHERE FirstName = 'Peter'
+
+20. With SQL, how can you return the number of records in the "Persons" table?
+*SELECT COUNT(*) FROM Persons
+*SELECT COUNT() FROM Persons
+*SELECT COLUMNS() FROM Persons
+*SELECT COLUMNS(*) FROM Persons
+Svar: SELECT COUNT(*) FROM Persons
+
+21. What is the most common type of join?
+*JOINED TABLE
+*INNER JOIN
+*INSIDE JOIN
+*JOINED
+Svar: INNER JOIN
+
+22. Which operator is used to select values within a range?
+*RANGE
+*BETWEEN
+*WITHIN
+Svar: BETWEEN
+
+23. The NOT NULL constraint enforces a column to not accept null values.
+*True
+*False
+Svar: True
+
+24. Which operator is used to search for a specified pattern in a column?
+*From
+*Get
+*Like
+Svar: Like
+
+25. Which SQL statement is used to create a table in a database?
+CREATE DATABASE TAB
+CREATE DATABASE TABLE
+CREATE DB
+CREATE TABLE
+Svar:  CREATE TABLE
