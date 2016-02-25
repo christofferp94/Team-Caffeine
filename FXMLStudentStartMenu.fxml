@@ -26,7 +26,7 @@
                   <Group>
                      <children>
                         <Rectangle arcHeight="200.0" arcWidth="10.0" fill="#a4a4a4" height="48.0" stroke="BLACK" strokeType="INSIDE" width="126.0" />
-                        <Text layoutX="46.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stats">
+                        <Text fx:id="studentList" layoutX="46.0" layoutY="29.0" onDragDetected="#handleButtonAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Stats">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -124,12 +124,12 @@
                   </Group>
                </graphic>
             </Button>
-            <Button fx:id="studentList" mnemonicParsing="false" onAction="#handleButtonAction">
+            <Button fx:id="unknowbtn2" mnemonicParsing="false" onAction="#handleButtonAction">
                <graphic>
                   <Group>
                      <children>
                         <Rectangle arcHeight="2000.0" arcWidth="30.0" fill="#bbbbbb" height="56.0" layoutX="11.0" stroke="BLACK" strokeType="INSIDE" width="142.0" />
-                        <Text layoutX="37.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Students List">
+                        <Text layoutX="53.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unknow">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
